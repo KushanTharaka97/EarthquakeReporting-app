@@ -21,5 +21,9 @@ public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
             if(listItemView == null){
                 listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
             }
+
+
+
+        return listItemView;
     }
 }
