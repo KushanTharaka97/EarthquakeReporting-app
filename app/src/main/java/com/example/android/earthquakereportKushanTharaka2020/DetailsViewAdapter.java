@@ -12,8 +12,9 @@ import java.util.ArrayList;
 public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
     private static final String LOG_TAG = DetailsViewAdapter.class.getSimpleName();
 
-    public DetailsViewAdapter(Activity context, ArrayList<DetailsView> earthquakes) {
-        super(context, 0, earthquakes);
+    public DetailsViewAdapter(Activity context, ArrayList<DetailsView> earthquake) {
+        //super class
+        super(context, 0, earthquake);
     }
 
     @Override

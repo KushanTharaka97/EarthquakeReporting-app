@@ -11,8 +11,8 @@ public class DetailsView {
         this.date = date;
     }
 
-    public int getMagnitude() {
-        return magnitude;
+    public String getMagnitude() {
+        return String.valueOf(magnitude);
     }
 
     public String getLocation() {
