@@ -9,19 +9,15 @@
 
     <TextView
         android:id="@+id/mag"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        style="@style/mainTextAlignments" />
 
     <TextView
         android:id="@+id/location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        style="@style/mainTextAlignments"/>
 
     <TextView
         android:id="@+id/date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        style="@style/mainTextAlignments"/>
 
 
 </LinearLayout>
