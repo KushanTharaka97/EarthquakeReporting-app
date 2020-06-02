@@ -10,22 +10,22 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
-    private static final String LOG_TAG =DetailsViewAdapter.class.getSimpleName();
+    private static final String LOG_TAG = DetailsViewAdapter.class.getSimpleName();
 
-    public DetailsViewAdapter(Activity context, ArrayList<DetailsView>earthquakes) {
-        super(context,0,earthquakes);
+    public DetailsViewAdapter(Activity context, ArrayList<DetailsView> earthquakes) {
+        super(context, 0, earthquakes);
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent ){
-            View listItemView = convertView;
-            if(listItemView == null){
-                listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
-            }
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View listItemView = convertView;
+        if (listItemView == null) {
+            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+        }
 
 
         // Get the {@link AndroidFlavor} object located at this position in the list
-        DetailsView currentDetailsView=getItem(position);
+        DetailsView currentDetailsView = getItem(position);
 
         // Find the TextView in the list_item.xml layout with the ID version_name
         TextView nameTextView = (TextView) listItemView.findViewById(R.id.mag);
