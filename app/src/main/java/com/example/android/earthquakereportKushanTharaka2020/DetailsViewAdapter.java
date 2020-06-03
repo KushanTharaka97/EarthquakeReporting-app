@@ -33,9 +33,13 @@ public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
 
         nameTextView.setText(currentDetailsView.getMagnitude());
 
-        TextView locationText = (TextView) listItemView.findViewById(R.id.location);
+        TextView locationTextOff = (TextView) listItemView.findViewById(R.id.locationOffset);
 
-        locationText.setText(currentDetailsView.getLocation());
+        locationTextOff.setText(currentDetailsView.getLocationOffsets());
+
+        TextView locationText = (TextView) listItemView.findViewById(R.id.locationDetails);
+
+        locationText.setText(currentDetailsView.getLocationDetails());
 
         TextView dateTextView = (TextView) listItemView.findViewById(R.id.date);
 
