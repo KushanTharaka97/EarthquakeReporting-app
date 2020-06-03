@@ -5,21 +5,24 @@
     android:gravity="center_vertical"
     android:minHeight="?android:attr/listPreferredItemHeight"
     android:orientation="horizontal"
-    android:paddingEnd="16dp"
+    android:paddingStart="16dp"
     android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingStart="16dp">
+    android:paddingEnd="16dp"
+    android:paddingRight="16dp">
 
     <TextView
         android:id="@+id/mag"
+
         style="@style/mainTextAlignments" />
 
     <TextView
         android:id="@+id/location"
+
         style="@style/mainTextAlignments" />
 
     <TextView
         android:id="@+id/date"
+
         style="@style/mainTextAlignments" />
 
 
