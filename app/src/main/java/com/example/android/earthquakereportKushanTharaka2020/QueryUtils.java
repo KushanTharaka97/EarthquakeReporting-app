@@ -40,7 +40,7 @@ public final class QueryUtils {
     }
 
     /**
-     * Return a list of {@link Earthquake} objects that has been built up from
+     * Return a list of {@link DetailsView} objects that has been built up from
      * parsing a JSON response.
      */
     public static ArrayList<DetailsView> extractEarthquakes() {
@@ -64,6 +64,10 @@ public final class QueryUtils {
 
                 String mag = propertiesObject.getString("mag");
                 String place = propertiesObject.getString("place");
+
+                String[] strArray = mag.split(",");
+                String strFirstSpeed = strArray[0];
+                String strSecondLocation = strArray[1];
 
                 //get time in unix
                 Long time = propertiesObject.getLong("time");
