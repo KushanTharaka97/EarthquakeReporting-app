@@ -13,11 +13,11 @@
 
     <TextView
         android:id="@+id/location"
-        style="@style/mainTextAlignments"/>
+        style="@style/mainTextAlignments" />
 
     <TextView
         android:id="@+id/date"
-        style="@style/mainTextAlignments"/>
+        style="@style/mainTextAlignments" />
 
 
 </LinearLayout>
