@@ -15,10 +15,21 @@
 
         style="@style/mainTextAlignments" />
 
-    <TextView
-        android:id="@+id/location"
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
 
-        style="@style/mainTextAlignments" />
+       <TextView
+          android:id="@+id/locationOffset"
+           style="@style/mainTextAlignments"
+           android:textColor="#72A0C1"/>
+
+       <TextView
+           android:id="@+id/locationDetails"
+           style="@style/mainTextAlignments" />
+
+   </LinearLayout>
 
     <TextView
         android:id="@+id/date"

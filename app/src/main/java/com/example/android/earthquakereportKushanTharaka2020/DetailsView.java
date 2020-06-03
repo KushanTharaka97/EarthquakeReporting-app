@@ -2,21 +2,27 @@ package com.example.android.earthquakereportKushanTharaka2020;
 
 public class DetailsView {
     private String magnitude;
-    private String location;
+    private String locationDetails;
+    private String locationOffsets;
     private String date;
 
-    public DetailsView(String magnitude, String location, String date) {
+    public DetailsView(String magnitude, String locationOffsets, String locationDetails, String date) {
         this.magnitude = magnitude;
-        this.location = location;
+        this.locationDetails = locationDetails;
+        this.locationOffsets = locationOffsets;
         this.date = date;
     }
 
     public String getMagnitude() {
-        return String.valueOf(magnitude);
+        return magnitude;
     }
 
-    public String getLocation() {
-        return location;
+    public String getLocationDetails() {
+        return locationDetails;
+    }
+
+    public String getLocationOffsets() {
+        return locationOffsets;
     }
 
     public String getDate() {
