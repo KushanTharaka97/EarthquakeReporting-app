@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
+
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -65,15 +67,16 @@ public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
         GradientDrawable magnitudeCircle = (GradientDrawable) nameTextView.getBackground();
         // Get the appropriate background color based on the current earthquake magnitude
 
-        int magnitudeColor = (int) getMagnitudeColor(currentDetailsView.getMagnitude());
+        int magnitudeColorWithR = getMagnitudeColor(magnitudeDouble);
         // Set the color on the magnitude circle
-        magnitudeCircle.setColor(magnitudeColor);
 
+        int magnitude1Color = ContextCompat.getColor(getContext(), magnitudeColorWithR);
+        magnitudeCircle.setColor(magnitude1Color);
 
         return listItemView;
     }
 
-    public double  getMagnitudeColor(double magnitudeDouble){
+    public int  getMagnitudeColor(double magnitudeDouble){
         int magnitudeColorResourceId;
         int magnitudeFloor = (int) Math.floor(magnitudeDouble);
 
@@ -83,7 +86,7 @@ public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
                 magnitudeColorResourceId = R.color.magnitude1;
                 break;
             case 2:
-                magnitudeColorResourceId =R.color.magnitude2;
+                magnitudeColorResourceId = R.color.magnitude2;
                 break;
             case 3:
                 magnitudeColorResourceId = R.color.magnitude3;
