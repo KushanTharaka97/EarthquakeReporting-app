@@ -4,9 +4,9 @@ public class DetailsView {
     private String magnitude;
     private String locationDetails;
     private String locationOffsets;
-    private String date;
+    private Long date;
 
-    public DetailsView(String magnitude, String locationOffsets, String locationDetails, String date) {
+    public DetailsView(String magnitude, String locationOffsets, String locationDetails, Long date) {
         this.magnitude = magnitude;
         this.locationDetails = locationDetails;
         this.locationOffsets = locationOffsets;
@@ -25,7 +25,7 @@ public class DetailsView {
         return locationOffsets;
     }
 
-    public String getDate() {
+    public Long getDate() {
         return date;
     }
 }

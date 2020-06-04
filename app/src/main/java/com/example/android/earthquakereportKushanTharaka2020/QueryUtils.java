@@ -66,17 +66,15 @@ public final class QueryUtils {
                 String mag = propertiesObject.getString("mag");
                 String place = propertiesObject.getString("place");
 
-                String[] strArray = mag.split(",");
+                String[] strArray = place.split("of");
                 String strFirstSpeed = strArray[0];
                 String strSecondLocation = strArray[1];
 
                 //get time in unix
                 Long time = propertiesObject.getLong("time");
-                Date timeDateObject = new Date(time);
-                SimpleDateFormat dateFormat = new SimpleDateFormat("MMM DD, yyyy");
-                String dateToDisplay = dateFormat.format(timeDateObject);
 
-                earthquakes.add(new DetailsView(mag, strFirstSpeed, strSecondLocation, dateToDisplay));
+
+                earthquakes.add(new DetailsView(mag, strFirstSpeed, strSecondLocation, time));
             }
 
         } catch (JSONException e) {

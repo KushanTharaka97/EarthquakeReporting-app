@@ -7,7 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
     private static final String LOG_TAG = DetailsViewAdapter.class.getSimpleName();
@@ -33,6 +35,7 @@ public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
 
         nameTextView.setText(currentDetailsView.getMagnitude());
 
+        //location find in the TextView
         TextView locationTextOff = (TextView) listItemView.findViewById(R.id.locationOffset);
 
         locationTextOff.setText(currentDetailsView.getLocationOffsets());
@@ -41,9 +44,13 @@ public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
 
         locationText.setText(currentDetailsView.getLocationDetails());
 
+        //Date Display find
+        Date timeDateObject = new Date(currentDetailsView.getDate());
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM DD, yyyy");
+        String dateToDisplay = dateFormat.format(timeDateObject);
         TextView dateTextView = (TextView) listItemView.findViewById(R.id.date);
 
-        dateTextView.setText(currentDetailsView.getDate());
+        dateTextView.setText(dateToDisplay);
 
 
         return listItemView;
