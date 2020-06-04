@@ -36,10 +36,20 @@ public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
         nameTextView.setText(currentDetailsView.getMagnitude());
 
         //location find in the TextView
-        TextView locationTextOff = (TextView) listItemView.findViewById(R.id.locationOffset);
-        locationTextOff.setText(currentDetailsView.getLocationOffsets());
+        //Check for the "of" in the property JSON object
+        TextView locationTextOffSet = (TextView) listItemView.findViewById(R.id.locationOffset);
         TextView locationText = (TextView) listItemView.findViewById(R.id.locationDetails);
-        locationText.setText(currentDetailsView.getLocationDetails());
+
+        if( currentDetailsView.getLocationDetails().contains("of")){
+            String[] locationDivider = currentDetailsView.getLocationDetails().split("of");
+
+            String firstLocationDetail = locationDivider[0];
+            String secondLocationDetail = locationDivider[1];
+
+            locationTextOffSet.setText(firstLocationDetail);
+            locationText.setText(secondLocationDetail);
+
+        }
 
         //Date Display find
         Date timeDateObject = new Date(currentDetailsView.getDate());
