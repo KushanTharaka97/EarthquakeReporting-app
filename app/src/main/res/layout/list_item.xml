@@ -12,7 +12,7 @@
 
     <TextView
         android:id="@+id/mag"
-
+        android:gravity="left"
         style="@style/mainTextAlignments" />
 
    <LinearLayout
@@ -33,7 +33,7 @@
 
     <TextView
         android:id="@+id/date"
-
+        android:gravity="right"
         style="@style/mainTextAlignments" />
 
 

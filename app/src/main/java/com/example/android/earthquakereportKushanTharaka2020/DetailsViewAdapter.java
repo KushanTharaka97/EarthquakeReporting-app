@@ -34,7 +34,7 @@ public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
         // Find the TextView in the list_item.xml layout with the ID version_name
         TextView nameTextView = (TextView) listItemView.findViewById(R.id.mag);
         double magnitudeDouble = Double.parseDouble(currentDetailsView.getMagnitude());
-        DecimalFormat formatterMag = new DecimalFormat("0.00");
+        DecimalFormat formatterMag = new DecimalFormat("0.0");
         String magOutput = formatterMag.format(magnitudeDouble);
         nameTextView.setText(magOutput);
 
