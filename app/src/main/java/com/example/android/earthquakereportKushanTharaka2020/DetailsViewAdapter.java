@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -32,8 +33,10 @@ public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
 
         // Find the TextView in the list_item.xml layout with the ID version_name
         TextView nameTextView = (TextView) listItemView.findViewById(R.id.mag);
-
-        nameTextView.setText(currentDetailsView.getMagnitude());
+        double magnitudeDouble = Double.parseDouble(currentDetailsView.getMagnitude());
+        DecimalFormat formatterMag = new DecimalFormat("0.00");
+        String magOutput = formatterMag.format(magnitudeDouble);
+        nameTextView.setText(magOutput);
 
         //location find in the TextView
         //Check for the "of" in the property JSON object
