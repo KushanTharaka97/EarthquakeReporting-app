@@ -66,13 +66,8 @@ public final class QueryUtils {
                 String mag = propertiesObject.getString("mag");
                 String place = propertiesObject.getString("place");
 
-                String[] strArray = place.split("of");
-                String strFirstSpeed = strArray[0];
-                String strSecondLocation = strArray[1];
-
                 //get time in unix
                 Long time = propertiesObject.getLong("time");
-
 
                 earthquakes.add(new DetailsView(mag, place, time));
             }
