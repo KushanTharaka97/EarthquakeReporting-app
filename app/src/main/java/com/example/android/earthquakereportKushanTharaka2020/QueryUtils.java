@@ -74,7 +74,7 @@ public final class QueryUtils {
                 Long time = propertiesObject.getLong("time");
 
 
-                earthquakes.add(new DetailsView(mag, strFirstSpeed, strSecondLocation, time));
+                earthquakes.add(new DetailsView(mag, place, time));
             }
 
         } catch (JSONException e) {

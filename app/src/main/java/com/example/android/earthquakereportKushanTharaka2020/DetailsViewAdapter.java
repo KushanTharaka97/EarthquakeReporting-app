@@ -37,11 +37,8 @@ public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
 
         //location find in the TextView
         TextView locationTextOff = (TextView) listItemView.findViewById(R.id.locationOffset);
-
         locationTextOff.setText(currentDetailsView.getLocationOffsets());
-
         TextView locationText = (TextView) listItemView.findViewById(R.id.locationDetails);
-
         locationText.setText(currentDetailsView.getLocationDetails());
 
         //Date Display find
@@ -49,7 +46,6 @@ public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
         SimpleDateFormat dateFormat = new SimpleDateFormat("MMM DD, yyyy");
         String dateToDisplay = dateFormat.format(timeDateObject);
         TextView dateTextView = (TextView) listItemView.findViewById(R.id.date);
-
         dateTextView.setText(dateToDisplay);
 
 
