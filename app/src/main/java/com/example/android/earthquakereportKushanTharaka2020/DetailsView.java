@@ -1,17 +1,17 @@
 package com.example.android.earthquakereportKushanTharaka2020;
 
 public class DetailsView {
-    private String magnitude;
+    private double magnitude;
     private String locationDetails;
     private Long date;
 
-    public DetailsView(String magnitude, String locationDetails, Long date) {
+    public DetailsView(double magnitude, String locationDetails, Long date) {
         this.magnitude = magnitude;
         this.locationDetails = locationDetails;
         this.date = date;
     }
 
-    public String getMagnitude() {
+    public double getMagnitude() {
         return magnitude;
     }
 

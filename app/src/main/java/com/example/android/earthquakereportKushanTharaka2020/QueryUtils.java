@@ -63,7 +63,7 @@ public final class QueryUtils {
                 JSONObject earthQuakeJSONArrayExtract = featuresDetect.getJSONObject(i);
                 JSONObject propertiesObject = earthQuakeJSONArrayExtract.getJSONObject("properties");
 
-                String mag = propertiesObject.getString("mag");
+                double mag = propertiesObject.getDouble("mag");
                 String place = propertiesObject.getString("place");
 
                 //get time in unix
