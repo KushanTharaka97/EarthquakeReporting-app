@@ -3,12 +3,12 @@ package com.example.android.earthquakereportKushanTharaka2020;
 public class DetailsView {
     private double magnitude;
     private String locationDetails;
-    private Long date;
+    private Long timeInMiliSecond;
 
-    public DetailsView(double magnitude, String locationDetails, Long date) {
+    public DetailsView(double magnitude, String locationDetails, Long timeInMiliSecond) {
         this.magnitude = magnitude;
         this.locationDetails = locationDetails;
-        this.date = date;
+        this.timeInMiliSecond = timeInMiliSecond;
     }
 
     public double getMagnitude() {
@@ -19,7 +19,7 @@ public class DetailsView {
         return locationDetails;
     }
 
-    public Long getDate() {
-        return date;
+    public Long gettimeInMiliSecond() {
+        return timeInMiliSecond;
     }
 }
