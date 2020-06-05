@@ -46,7 +46,7 @@ public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
         TextView locationTextOffSet = (TextView) listItemView.findViewById(R.id.locationOffset);
         TextView locationText = (TextView) listItemView.findViewById(R.id.locationDetails);
 
-        if( currentDetailsView.getLocationDetails().contains("of")){
+        if (currentDetailsView.getLocationDetails().contains("of")) {
             String[] locationDivider = currentDetailsView.getLocationDetails().split("of");
 
             String firstLocationDetail = locationDivider[0];
@@ -76,11 +76,11 @@ public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
         return listItemView;
     }
 
-    public int  getMagnitudeColor(double magnitudeDouble){
+    public int getMagnitudeColor(double magnitudeDouble) {
         int magnitudeColorResourceId;
         int magnitudeFloor = (int) Math.floor(magnitudeDouble);
 
-        switch (magnitudeFloor){
+        switch (magnitudeFloor) {
             case 0:
             case 1:
                 magnitudeColorResourceId = R.color.magnitude1;
