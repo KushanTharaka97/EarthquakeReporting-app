@@ -14,6 +14,7 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.SimpleTimeZone;
 
 public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
     private static final String LOG_TAG = DetailsViewAdapter.class.getSimpleName();
@@ -58,12 +59,22 @@ public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
         }
 
         //Date Display find
-        Date timeDateObject = new Date(currentDetailsView.getDate());
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM DD, yyyy");
-        String dateToDisplay = dateFormat.format(timeDateObject);
+        //get date from the DetailsView ArrayList Classs
+        Long timeDateObject = new Long(currentDetailsView.gettimeInMiliSecond());
+        String dateToDisplay = formatDate(timeDateObject);
+
+        //Initialize the place in main XML file
         TextView dateTextView = (TextView) listItemView.findViewById(R.id.date);
         dateTextView.setText(dateToDisplay);
 
+        //time Display
+        String timeToDisplay = formatTime(timeDateObject);
+        TextView timeTextView = listItemView.findViewById(R.id.time);
+        timeTextView.setText(timeToDisplay);
+
+
+
+        //drawing in the background
         GradientDrawable magnitudeCircle = (GradientDrawable) nameTextView.getBackground();
         // Get the appropriate background color based on the current earthquake magnitude
 
@@ -115,5 +126,19 @@ public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
 
         }
         return magnitudeColorResourceId;
+    }
+
+    //making the pattern of the DATE
+    public String formatDate(Long dateObject){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM DD, yyyy");
+        String dateToDisplay = dateFormat.format(dateObject);
+        return dateToDisplay;
+    }
+
+    //get format from milisecond data object
+    public String formatTime(Long dateObject){
+        SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm a");
+        String timeToDisplay = timeFormat.format(dateObject);
+        return timeToDisplay;
     }
 }
