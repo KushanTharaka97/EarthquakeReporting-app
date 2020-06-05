@@ -38,8 +38,7 @@ public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
         // Find the TextView in the list_item.xml layout with the ID version_name
         TextView nameTextView = (TextView) listItemView.findViewById(R.id.mag);
         double magnitudeDouble = currentDetailsView.getMagnitude();
-        DecimalFormat formatterMag = new DecimalFormat("0.0");
-        String magOutput = formatterMag.format(magnitudeDouble);
+        String magOutput = formatMagnitude(magnitudeDouble);
         nameTextView.setText(magOutput);
 
         //location find in the TextView
@@ -72,16 +71,13 @@ public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
         TextView timeTextView = listItemView.findViewById(R.id.time);
         timeTextView.setText(timeToDisplay);
 
-
-
         //drawing in the background
         GradientDrawable magnitudeCircle = (GradientDrawable) nameTextView.getBackground();
         // Get the appropriate background color based on the current earthquake magnitude
 
         int magnitudeColorWithR = getMagnitudeColor(magnitudeDouble);
         // Set the color on the magnitude circle
-
-        int magnitude1Color = ContextCompat.getColor(getContext(), magnitudeColorWithR);
+    int magnitude1Color = ContextCompat.getColor(getContext(), magnitudeColorWithR);
         magnitudeCircle.setColor(magnitude1Color);
 
         return listItemView;
@@ -129,16 +125,22 @@ public class DetailsViewAdapter extends ArrayAdapter<DetailsView> {
     }
 
     //making the pattern of the DATE
-    public String formatDate(Long dateObject){
+    public String formatDate(Long dateObject) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("MMM DD, yyyy");
         String dateToDisplay = dateFormat.format(dateObject);
         return dateToDisplay;
     }
 
     //get format from milisecond data object
-    public String formatTime(Long dateObject){
+    public String formatTime(Long dateObject) {
         SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm a");
         String timeToDisplay = timeFormat.format(dateObject);
         return timeToDisplay;
+    }
+
+    public String formatMagnitude(double mag){
+        DecimalFormat magFormatter = new DecimalFormat("0.0");
+        String magStringValue = magFormatter.format(mag);
+        return magStringValue;
     }
 }
