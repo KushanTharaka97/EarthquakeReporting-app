@@ -36,8 +36,19 @@
 
        <TextView
           android:id="@+id/locationOffset"
-           style="@style/mainTextAlignments"
-           android:textColor="#72A0C1"/>
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:ellipsize="end"
+           android:fontFamily="sans-serif-medium"
+           android:maxLines="1"
+           android:textAllCaps="true"
+           android:textColor="@color/textColorEarthquakeDetails"
+           android:textSize="12sp"
+           tools:text="30km S of"/>
+
+        <TextView
+            android:id="@+id/locationDetails"
+            style="@style/mainTextAlignments" />
 
    </LinearLayout>
 
@@ -46,9 +57,7 @@
         android:gravity="right"
         style="@style/mainTextAlignments" />
 
-    <TextView
-        android:id="@+id/locationDetails"
-        style="@style/mainTextAlignments" />
+
 
 
 </LinearLayout>
